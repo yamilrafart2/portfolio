@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 :root {
@@ -19,10 +18,12 @@
 body {
     background-color: var(--color-primario);
     color:var(--color-secundario);
-    /* height: 100vh; */
     box-sizing: border-box;
 }
 
+/* 
+    HEADER - BARRA NAVEGACIÓN
+*/
 .header {
     padding: 2% 0% 0% 15%;
 }
@@ -34,13 +35,15 @@ body {
 
 .header__menu__link {
     font-family: var(--fuente-montserrat);
-    /* font-size: 24px; 1rem = 16px --> 1.5rem = 24px*/
     font-size: 1.5rem;
     font-weight: 600;
     color: var(--color-terciario);
     text-decoration: none;
 }
 
+/* 
+    PRESENTACIÓN - MAIN
+*/
 .presentacion {
     padding: 5% 15%;
     display: flex;
@@ -56,23 +59,9 @@ body {
     gap: 40px;
 }
 
-.presentacion__curriculum__contenido {
-    /* width: 50%; */
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-}
-
 .presentacion__contenido__titulo {
     font-family: var(--fuente-krona);
-    /* font-size: 36px; 1rem = 16px --> 2.25rem = 36px */
     font-size: 2.25rem;
-}
-
-.presentacion__contenido__titulo__titulo {
-    font-family: var(--fuente-krona);
-    /* font-size: 36px; 1rem = 16px --> 2.25rem = 36px */
-    font-size: 1.45rem;
 }
 
 .titulo-destacado {
@@ -84,8 +73,7 @@ body {
     font-family: var(--fuente-montserrat);
 }
 
-.presentacion__contenido__texto__a {
-    text-decoration: none;
+.texto-destacado {
     color: var(--color-terciario);
 }
 
@@ -120,14 +108,16 @@ body {
 }
 
 .presentacion__enlaces__link:hover {
-    background-color: var(--color-hover);
-    /* padding: 3%; */
+    background-color: var(--color-hover);    
 }
 
 .presentacion__imagen {
     width: 50%;
 }
 
+/* 
+    FOOTER
+*/
 .footer {
     background-color: var(--color-terciario);
     color: var(--color-primario);
@@ -140,9 +130,11 @@ body {
 
 .footer__a {
     color: var(--color-primario);
-    /* text-decoration: none; */
 }
 
+/* 
+    RESPONSIVIDAD
+*/
 @media (max-width: 1200px){
 
     .header {
