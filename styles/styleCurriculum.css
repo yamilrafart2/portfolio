@@ -8,54 +8,73 @@
 
     --fuente-montserrat: "Montserrat", sans-serif;
     --fuente-krona: "Krona One", sans-serif;
+
+    --espaciado-seccion: 3rem;
+    --gap-general: 2.5rem;
 }
 
 * {
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
 }
 
 body {
     background-color: var(--color-primario);
-    color:var(--color-secundario);
-    box-sizing: border-box;
+    color: var(--color-secundario);
+    font-family: var(--fuente-montserrat);
+    line-height: 1.6;
 }
 
 /* 
     HEADER - BARRA NAVEGACIÓN
 */
 .header {
-    padding: 2% 0% 0% 15%;
+    position: sticky;
+    top: 0;
+    background-color: var(--color-primario);
+    padding: 2% 0 1% 15%;
+    z-index: 1000;
 }
 
 .header__menu {
     display: flex;
-    gap: 80px;
+    gap: 5rem;
 }
 
 .header__menu__link {
-    font-family: var(--fuente-montserrat);
     font-size: 1.5rem;
     font-weight: 600;
     color: var(--color-terciario);
     text-decoration: none;
 }
 
+/* BOTÓN MENÚ TOGGLE */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: var(--color-terciario);
+    cursor: pointer;
+}
+
 /* 
     PRESENTACIÓN - MAIN
 */
 .presentacion {
-    padding: 5% 15%;
+    padding: 2% 15% 5% 15%;
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    gap: 82px;
+    align-items: flex-start;
+    gap: var(--gap-general);
 }
 
 .presentacion__contenido {
+    /* width: 50%; */
     display: flex;
     flex-direction: column;
-    gap: 40px;
+    gap: 2rem;
 }
 
 .presentacion__contenido__titulo {
@@ -65,32 +84,30 @@ body {
 
 .presentacion__contenido__subtitulo {
     font-family: var(--fuente-krona);
-    font-size: 1.45rem;
+    font-size: 1.5rem;
+    font-weight: 400;
 }
 
 .presentacion__contenido__texto {
     font-size: 1.5rem;
-    font-family: var(--fuente-montserrat);
+}
+
+.texto-destacado {
+    color: var(--color-terciario);
 }
 
 .presentacion__contenido__ul {
     font-size: 1.5rem;
-    font-family: var(--fuente-montserrat);
     padding-left: 3%;
 }
 
 .presentacion__contenido__details__ul {
     font-size: 1.5rem;
-    font-family: var(--fuente-montserrat);
     padding-left: 5%;
 }
 
 .presentacion__contenido__texto__a {
     text-decoration: none;
-    color: var(--color-terciario);
-}
-
-.texto-destacado {
     color: var(--color-terciario);
 }
 
@@ -100,45 +117,89 @@ body {
 .footer {
     background-color: var(--color-terciario);
     color: var(--color-primario);
-    padding: 23.64px;
-    font-family: var(--fuente-montserrat);
-    font-size: 1.5rem;
+    padding: 1.5rem;
+    font-size: 1.2rem;
     text-align: center;
-    font-weight: 400;
 }
 
 .footer__a {
     color: var(--color-primario);
+    font-weight: bold;
 }
 
 /* 
     RESPONSIVIDAD
 */
 @media (max-width: 1200px) {
-    /* Reglas para tabletas y computadoras portátiles pequeñas */
+    /* REGLAS PARA TABLETS Y PC */
     .presentacion {
         flex-direction: column-reverse;
         padding: 5%;
-        gap: 40px;
+        gap: 2rem;
+    }
+    .presentacion__contenido,
+    .presentacion__imagen {
+        width: 100%;
+    }
+
+    .presentacion__contenido__ul {
+        padding-left: 1.5rem;
+        font-size: 1rem;
+    }
+    .presentacion__contenido__details__ul {
+        padding-left: 2rem;
+        font-size: 1rem;
     }
 }
 
 @media (max-width: 768px) {
-    /* Reglas específicas para tabletas en orientación vertical */
-    .presentacion__contenido__titulo {
-        font-size: 1.8rem;
+    /* REGLAS PARA TABLETS EN ORIENTACIÓN VERTICAL */
+    .header__menu {
+        display: none;
+        flex-direction: column;
+        background-color: var(--color-primario);
+        padding: 1rem;
+        gap: 1rem;
     }
+    .header__menu.active {
+        display: flex;
+    }
+    .menu-toggle {
+        display: block;
+    }
+
     .presentacion__contenido__texto {
-        font-size: 1.2rem;
+        font-size: 1rem;
+    }
+
+    .presentacion__contenido__ul {
+        padding-left: 1.5rem;
+        font-size: 1rem;
+    }
+    .presentacion__contenido__details__ul {
+        padding-left: 2rem;
+        font-size: 1rem;
     }
 }
 
 @media (max-width: 480px) {
-    /* Reglas específicas para teléfonos móviles */
+    /* REGLAS PARA SMARTPHONES */
     .header__menu__link {
         font-size: 1rem;
     }
+    .presentacion__enlaces {
+        flex-direction: column;
+    }
     .presentacion__enlaces__link {
-        width: 80%;
+        flex: 1 1 100%;
+    }
+
+    .presentacion__contenido__ul {
+        padding-left: 1.5rem;
+        font-size: 1rem;
+    }
+    .presentacion__contenido__details__ul {
+        padding-left: 2rem;
+        font-size: 1rem;
     }
 }
