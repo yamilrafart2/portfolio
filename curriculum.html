@@ -14,6 +14,10 @@
     </head>
     <body>
         <header class="header">
+            <!-- BOTÓN MENÚ TOGGLE -->
+            <button class="menu-toggle" aria-label="Abrir menú">☰</button>
+
+            <!-- MENÚ PRINCIPAL -->
             <nav class="header__menu">
                 <a class="header__menu__link" href="index.html">Home</a>
                 <a class="header__menu__link" href="curriculum.html">Curriculum</a>
@@ -111,5 +115,15 @@
         <footer class="footer">
             <p>Desarrollado por Yamil Arturo Rafart - <a class="footer__a" href="mailto:yamilrafart@hotmail.com">Envíame un correo</a></p>            
         </footer>
+
+        <!-- SCRIPT PARA ACTIVAR EL MENÚ TOGGLE -->
+        <script>
+            const toggle = document.querySelector('.menu-toggle');
+            const menu = document.querySelector('.header__menu');
+
+            toggle.addEventListener('click', () => {
+                menu.classList.toggle('active');
+            });
+        </script>
     </body>
 </html>

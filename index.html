@@ -14,6 +14,10 @@
     </head>
     <body>
         <header class="header">
+            <!-- BOTÓN MENÚ TOGGLE -->
+            <button class="menu-toggle" aria-label="Abrir menú">☰</button>
+
+            <!-- MENÚ PRINCIPAL -->
             <nav class="header__menu">
                 <a class="header__menu__link" href="index.html">Home</a>
                 <a class="header__menu__link" href="curriculum.html">Curriculum</a>
@@ -21,22 +25,20 @@
             </nav>
         </header>
         
+        <h1 class="titulo">
+            ¡Hola, mi nombre es <strong class="titulo-destacado">Yamil Arturo Rafart!</strong>
+        </h1>
+
         <main class="presentacion">
-            
             <section class="presentacion__contenido">
-                <h1 class="presentacion__contenido__titulo">
-                    ¡Hola, mi nombre es <strong class="titulo-destacado">Yamil Arturo Rafart!</strong>
-                </h1>
-                
                 <p class="presentacion__contenido__texto">
                     Estudiante avanzado de <strong class="texto-destacado">Ingeniería en Sistemas de Información</strong>.<br><br>
                     Apasionado por el aprendizaje continuo, actualmente complementando mi formación con un programa <strong class="texto-destacado">Full-Stack JavaScript</strong>.<br><br>
                     Mi objetivo es integrarme en un equipo de trabajo donde pueda potenciar mis habilidades técnicas, aprender de los mejores y, sobre todo, comenzar a <strong class="texto-destacado">contribuir activamente</strong> en la creación de <strong class="texto-destacado">productos digitales de calidad</strong>.
                 </p>
                 
+                <h2 class="presentacion__contenido__subtitulo">Accede a mis redes:</h2>
                 <aside class="presentacion__enlaces">
-                    <h2 class="presentacion__enlaces__subtitulo">Accede a mis redes:</h2>
-                    
                     <a class="presentacion__enlaces__link"  target="_blank" rel="noreferrer" href="https://github.com/yamilrafart2">
                         <img src="/assets/github.png" alt="Logo de GitHub">
                         GitHub
@@ -60,5 +62,15 @@
         <footer class="footer">
             <p>Desarrollado por Yamil Arturo Rafart - <a class="footer__a" href="mailto:yamilrafart@hotmail.com">Envíame un correo</a></p>
         </footer>
+
+        <!-- SCRIPT PARA ACTIVAR EL MENÚ TOGGLE -->
+        <script>
+            const toggle = document.querySelector('.menu-toggle');
+            const menu = document.querySelector('.header__menu');
+
+            toggle.addEventListener('click', () => {
+                menu.classList.toggle('active');
+            });
+        </script>
     </body>
 </html>
