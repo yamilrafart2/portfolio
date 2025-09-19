@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
+/* VARIABLES GLOBALES */
 :root {
     --color-primario: #000000;
     --color-secundario: #F6F6F6;
@@ -13,6 +14,7 @@
     --gap-general: 2.5rem;
 }
 
+/* RESET */
 * {
     padding: 0;
     margin: 0;
@@ -26,9 +28,7 @@ body {
     line-height: 1.6;
 }
 
-/* 
-    HEADER - BARRA NAVEGACIÓN
-*/
+/* HEADER */
 .header {
     position: sticky;
     top: 0;
@@ -59,9 +59,7 @@ body {
     cursor: pointer;
 }
 
-/* 
-    TITULO
-*/
+/* TITULO (solo en index) */
 .titulo {
     font-family: var(--fuente-krona);
     font-size: 2.25rem;
@@ -73,9 +71,7 @@ body {
     color: var(--color-terciario);
 }
 
-/* 
-    PRESENTACIÓN - MAIN
-*/
+/* PRESENTACIÓN */
 .presentacion {
     padding: 2% 15% 5% 15%;
     display: flex;
@@ -85,10 +81,21 @@ body {
 }
 
 .presentacion__contenido {
-    width: 50%;
+    /* flex: 1; */
     display: flex;
     flex-direction: column;
     gap: 2rem;
+}
+
+.presentacion__contenido__titulo {
+    font-family: var(--fuente-krona);
+    font-size: 2.25rem;
+}
+
+.presentacion__contenido__subtitulo {
+    font-family: var(--fuente-krona);
+    font-size: 1.5rem;
+    font-weight: 400;
 }
 
 .presentacion__contenido__texto {
@@ -99,18 +106,34 @@ body {
     color: var(--color-terciario);
 }
 
-.presentacion__contenido__subtitulo {
-    font-family: var(--fuente-krona);
+.presentacion__contenido__ul {
     font-size: 1.5rem;
-    font-weight: 400;
+    padding-left: 3%;
+}
+.presentacion__contenido__details__ul {
+    font-size: 1.5rem;
+    padding-left: 2rem;
 }
 
+
+
+.presentacion__contenido__texto__a {
+    text-decoration: none;
+    color: var(--color-terciario);
+}
+
+.presentacion__contenido__footer {
+    font-size: 1.5rem;
+}
+
+.presentacion__contenido__enlaces,
 .presentacion__enlaces {
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
 }
 
+.presentacion__contenido__enlaces__link,
 .presentacion__enlaces__link {
     flex: 1 1 45%;
     text-align: center;
@@ -127,20 +150,27 @@ body {
     gap: 0.5rem;
     transition: background 0.3s;
 }
-
+.presentacion__contenido__enlaces__link:hover,
 .presentacion__enlaces__link:hover {
-    background-color: var(--color-hover);    
+    background-color: var(--color-hover);
 }
 
-.presentacion__imagen {
+/* IMÁGENES */
+.index__presentacion__imagen {
     width: 50%;
     max-width: 100%;
     border-radius: 0.5rem;
 }
+.presentacion__imagen {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+    display: block;
+    margin: 1rem 0;
+}
 
-/* 
-    FOOTER
-*/
+/* FOOTER */
 .footer {
     background-color: var(--color-terciario);
     color: var(--color-primario);
@@ -148,30 +178,38 @@ body {
     font-size: 1.2rem;
     text-align: center;
 }
-
 .footer__a {
     color: var(--color-primario);
     font-weight: bold;
 }
 
-/* 
-    RESPONSIVIDAD
-*/
+/* RESPONSIVIDAD */
 @media (max-width: 1200px) {
-    /* REGLAS PARA TABLETS Y PC */
     .presentacion {
         flex-direction: column-reverse;
         padding: 5%;
         gap: 2rem;
     }
     .presentacion__contenido,
-    .presentacion__imagen {
+    .index__presentacion__imagen {
         width: 100%;
+    }
+    .presentacion__imagen {
+        max-width: 80%;
+        margin: 0 auto;
+    }
+
+    .presentacion__contenido__ul {
+        padding-left: 1.5rem;
+        font-size: 1rem;
+    }
+    .presentacion__contenido__details__ul {
+        padding-left: 2rem;
+        font-size: 1rem;
     }
 }
 
 @media (max-width: 768px) {
-    /* REGLAS PARA TABLETS EN ORIENTACIÓN VERTICAL */
     .header__menu {
         display: none;
         flex-direction: column;
@@ -185,21 +223,40 @@ body {
     .menu-toggle {
         display: block;
     }
+    .presentacion__contenido__texto,
+    .presentacion__contenido__footer {
+        font-size: 1rem;
+    }
 
-    .presentacion__contenido__texto {
+    .presentacion__contenido__ul {
+        padding-left: 1.5rem;
+        font-size: 1rem;
+    }
+    .presentacion__contenido__details__ul {
+        padding-left: 2rem;
         font-size: 1rem;
     }
 }
 
 @media (max-width: 480px) {
-    /* REGLAS PARA SMARTPHONES */
     .header__menu__link {
         font-size: 1rem;
     }
+    .presentacion__contenido__enlaces,
     .presentacion__enlaces {
         flex-direction: column;
     }
+    .presentacion__contenido__enlaces__link,
     .presentacion__enlaces__link {
         flex: 1 1 100%;
+    }
+
+    .presentacion__contenido__ul {
+        padding-left: 1.5rem;
+        font-size: 1rem;
+    }
+    .presentacion__contenido__details__ul {
+        padding-left: 2rem;
+        font-size: 1rem;
     }
 }
