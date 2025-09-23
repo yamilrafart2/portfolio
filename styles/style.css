@@ -110,12 +110,23 @@ body {
     font-size: 1.5rem;
     padding-left: 3%;
 }
+
+.presentacion__contenido__details {
+    cursor: pointer;
+}
+
 .presentacion__contenido__details__ul {
     font-size: 1.5rem;
     padding-left: 2rem;
+    cursor: default;
 }
 
-
+.presentacion__contenido__article {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    /* justify-content: center; */
+}
 
 .presentacion__contenido__texto__a {
     text-decoration: none;
