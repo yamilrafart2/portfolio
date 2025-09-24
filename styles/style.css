@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat:wght@400;600;700&display=swap');
 
 /* VARIABLES GLOBALES */
 :root {
@@ -47,6 +47,10 @@ body {
     font-weight: 600;
     color: var(--color-terciario);
     text-decoration: none;
+}
+
+.header__menu__link:hover {
+    text-decoration: underline;
 }
 
 /* BOTÓN MENÚ TOGGLE */
@@ -114,10 +118,15 @@ body {
     cursor: pointer;
 }
 
+.presentacion__contenido__details:hover {
+    background-color: var(--color-hover);
+}
+
 .presentacion__contenido__details__ul {
     font-size: 1.5rem;
     padding-left: 2rem;
     cursor: default;
+    background-color: var(--color-primario);
 }
 
 .presentacion__contenido__article {
@@ -129,6 +138,10 @@ body {
 .presentacion__contenido__texto__a {
     text-decoration: none;
     color: var(--color-terciario);
+}
+
+.presentacion__contenido__texto__a:hover {
+    text-decoration: underline;
 }
 
 .presentacion__contenido__footer {
@@ -174,11 +187,11 @@ body {
 }
 
 .presentacion__imagen {
-    width: 100%;
     max-width: 100%;
     height: auto;
-    border-radius: 0.5rem;
+    aspect-ratio: 16 / 9;
     display: block;
+    border-radius: 0.5rem;
     margin: 1rem 0;
 }
 
@@ -189,11 +202,6 @@ body {
     padding: 1.5rem;
     font-size: 1.2rem;
     text-align: center;
-}
-
-.footer__a {
-    color: var(--color-primario);
-    font-weight: bold;
 }
 
 /* FORMULARIO DE CONTACTO */
@@ -237,7 +245,9 @@ body {
 
 /* FOCUS */
 .presentacion__contenido__form input:focus,
-.presentacion__contenido__form textarea:focus {
+.presentacion__contenido__form textarea:focus,
+.presentacion__contenido__form input:hover,
+.presentacion__contenido__form textarea:hover {
     outline: none;
     border-color: var(--color-terciario);
     box-shadow: 0 0 0 4px rgba(34, 212, 253, 0.15);
@@ -317,7 +327,7 @@ body {
     }
 
     .presentacion__imagen {
-        max-width: 80%;
+        max-width: 100%;
         margin: 0 auto;
     }
 
