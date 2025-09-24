@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <title>🧑🏻‍💻 Contáctame - Yamil Arturo Rafart</title>
+
+        <link rel="icon" type="image/webp" href="assets/favicon.webp">
+        <!-- <meta name="robots" content="index, follow"> -->
+        <meta name="description" content="Contacto de Yamil Arturo Rafart, estudiante avanzado de Ingeniería en Sistemas de Información.">
+        <meta name="keywords" content="portfolio, portafolio, estudiante, ingeniería, sistemas, contacto, contáctame, contactar, formulario, mail, email">
+        <meta name="author" content="Yamil Arturo Rafart">
+        <link rel="stylesheet" href="styles/style.css">
+    </head>
+
+    <body>
+        <header class="header">
+            <!-- BOTÓN MENÚ TOGGLE -->
+            <button class="menu-toggle" aria-label="Abrir menú">☰</button>
+            
+            <!-- MENÚ PRINCIPAL -->
+            <nav class="header__menu">
+                <a class="header__menu__link" href="index.html">Home</a>
+                <a class="header__menu__link" href="curriculum.html">Currículum</a>
+                <a class="header__menu__link" href="proyectos.html">Proyectos</a>
+                <a class="header__menu__link" href="contactame.html">Contáctame</a>
+            </nav>
+        </header>
+
+        <main class="presentacion">
+            <section class="presentacion__contenido">
+                <h1 class="presentacion__contenido__titulo">Contáctame</h1>
+                <p class="presentacion__contenido__texto">Completa el formulario y me pondré en contacto contigo:</p>
+
+                <form id="contactForm" class="presentacion__contenido__form">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required autocomplete="name">
+                    
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="ejemplo@mail.com" required autocomplete="email">
+                    
+                    <label for="asunto">Asunto: </label>
+                    <input type="text" id="asunto" name="asunto" placeholder="Asunto" required autocomplete="off">
+                    
+                    <label for="mensaje">Mensaje:</label>
+                    <textarea id="mensaje" name="mensaje" placeholder="Tu mensaje..." rows="6" required autocomplete="off"></textarea>
+                    
+                    <button id="contactSubmit" type="submit">Enviar</button>
+
+                    <p id="formResponse" class="presentacion__contenido__form__response" role="status"></p>
+                </form>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <p>Desarrollado por Yamil Arturo Rafart</p>
+        </footer>
+
+
+         <!-- SCRIPTS -->
+        <script src="portfolio.js" defer></script>
+
+        <!-- SDK de EmailJS -->
+        <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+        <script src="email.js" defer></script>
+    </body>
+
+</html>

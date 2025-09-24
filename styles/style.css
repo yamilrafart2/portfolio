@@ -81,7 +81,6 @@ body {
 }
 
 .presentacion__contenido {
-    /* flex: 1; */
     display: flex;
     flex-direction: column;
     gap: 2rem;
@@ -125,7 +124,6 @@ body {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    /* justify-content: center; */
 }
 
 .presentacion__contenido__texto__a {
@@ -161,9 +159,11 @@ body {
     gap: 0.5rem;
     transition: background 0.3s;
 }
+
 .presentacion__contenido__enlaces__link:hover,
 .presentacion__enlaces__link:hover {
     background-color: var(--color-hover);
+    transform: translateY(2px);
 }
 
 /* IMÁGENES */
@@ -172,6 +172,7 @@ body {
     max-width: 100%;
     border-radius: 0.5rem;
 }
+
 .presentacion__imagen {
     width: 100%;
     max-width: 100%;
@@ -189,9 +190,117 @@ body {
     font-size: 1.2rem;
     text-align: center;
 }
+
 .footer__a {
     color: var(--color-primario);
     font-weight: bold;
+}
+
+/* FORMULARIO DE CONTACTO */
+.presentacion__contenido__form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    max-width: 700px;
+    width: 100%;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(34, 212, 253, 0.25);
+    border-radius: 0.8rem;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.5);
+}
+
+.presentacion__contenido__form label {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-secundario);
+}
+
+.presentacion__contenido__form input,
+.presentacion__contenido__form textarea {
+    padding: 1rem;
+    border: 2px solid rgba(34, 212, 253, 0.4);
+    border-radius: 0.6rem;
+    background: var(--color-primario);
+    color: var(--color-secundario);
+    font-size: 1rem;
+    font-family: var(--fuente-montserrat);
+    transition: border-color 0.25s ease, box-shadow 0.25s ease;
+    resize: none;
+}
+
+/* PLACEHOLDER SUTIL */
+.presentacion__contenido__form input::placeholder,
+.presentacion__contenido__form textarea::placeholder {
+    color: rgba(246, 246, 246, 0.6);
+}
+
+/* FOCUS */
+.presentacion__contenido__form input:focus,
+.presentacion__contenido__form textarea:focus {
+    outline: none;
+    border-color: var(--color-terciario);
+    box-shadow: 0 0 0 4px rgba(34, 212, 253, 0.15);
+}
+
+/* BOTÓN ENVIAR */
+.presentacion__contenido__form button {
+    margin-top: 1rem;
+    padding: 1rem;
+    border: none;
+    border-radius: 0.6rem;
+    background: var(--color-terciario);
+    color: var(--color-primario);
+    font-weight: 700;
+    font-size: 1.05rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.25s ease, transform 0.1s ease;
+    align-self: flex-start;
+}
+
+.presentacion__contenido__form button:hover {
+    background: var(--color-hover);
+    color: var(--color-secundario);
+}
+
+.presentacion__contenido__form button:active {
+    transform: translateY(2px);
+}
+
+.presentacion__contenido__form button:disabled {
+  background: #999;
+  color: #666;
+  cursor: not-allowed;
+  opacity: 0.7;
+  transform: none; /* EVITA EFECTO ACTIVE */
+}
+
+.presentacion__contenido__form button:disabled:hover {
+  background: #999; /* NO CAMBIA EN HOVER */
+  color: #666;
+}
+
+/* MENSAJE DE ESTADO DEL ENVÍO DEL FORMULARIO*/
+#formResponse {
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.5rem;
+  opacity: 0;
+  transform: translateY(-4px);
+  transition: opacity 200ms ease, transform 200ms ease;
+  pointer-events: none;
+}
+#formResponse.visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+#formResponse.success {
+  color: #4CAF50;
+}
+#formResponse.error {
+  color: #ff6b6b;
 }
 
 /* RESPONSIVIDAD */
@@ -201,10 +310,12 @@ body {
         padding: 5%;
         gap: 2rem;
     }
+
     .presentacion__contenido,
     .index__presentacion__imagen {
         width: 100%;
     }
+
     .presentacion__imagen {
         max-width: 80%;
         margin: 0 auto;
@@ -214,9 +325,14 @@ body {
         padding-left: 1.5rem;
         font-size: 1rem;
     }
+
     .presentacion__contenido__details__ul {
         padding-left: 2rem;
         font-size: 1rem;
+    }
+
+    .presentacion__contenido__form {
+        padding: 1.5rem;
     }
 }
 
@@ -228,12 +344,15 @@ body {
         padding: 1rem;
         gap: 1rem;
     }
+
     .header__menu.active {
         display: flex;
     }
+
     .menu-toggle {
         display: block;
     }
+
     .presentacion__contenido__texto,
     .presentacion__contenido__footer {
         font-size: 1rem;
@@ -243,9 +362,26 @@ body {
         padding-left: 1.5rem;
         font-size: 1rem;
     }
+
     .presentacion__contenido__details__ul {
         padding-left: 2rem;
         font-size: 1rem;
+    }
+
+    .presentacion__contenido__form {
+        padding: 1.2rem;
+    }
+
+    .presentacion__contenido__form input,
+    .presentacion__contenido__form textarea {
+        font-size: 0.95rem;
+        padding: 0.85rem;
+    }
+
+    .presentacion__contenido__form button {
+        width: 100%;
+        /* BOTÓN OCUPA ANCHO COMPLETO EN TABLET Y SMARTHPHONES */
+        text-align: center;
     }
 }
 
@@ -253,10 +389,12 @@ body {
     .header__menu__link {
         font-size: 1rem;
     }
+
     .presentacion__contenido__enlaces,
     .presentacion__enlaces {
         flex-direction: column;
     }
+
     .presentacion__contenido__enlaces__link,
     .presentacion__enlaces__link {
         flex: 1 1 100%;
@@ -266,8 +404,25 @@ body {
         padding-left: 1.5rem;
         font-size: 1rem;
     }
+
     .presentacion__contenido__details__ul {
         padding-left: 2rem;
         font-size: 1rem;
+    }
+
+    .presentacion__contenido__form {
+        padding: 1rem;
+        gap: 0.9rem;
+    }
+
+    .presentacion__contenido__form input,
+    .presentacion__contenido__form textarea {
+        font-size: 0.9rem;
+        padding: 0.7rem;
+    }
+
+    .presentacion__contenido__form button {
+        font-size: 0.95rem;
+        padding: 0.9rem;
     }
 }
