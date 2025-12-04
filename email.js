@@ -1,11 +1,10 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // COMPRUEBA QUE EL SDK (EMAILJS) ESTÉ CARGADO
+  
   if (!window.emailjs) {
     console.warn('EmailJS SDK no cargado.');
     return;
   }
 
-  // INICIALIZACIÓN
   try {
     emailjs.init("lrcbX1P63MWRFro-Q");
   } catch (err) {
@@ -23,7 +22,6 @@ document.addEventListener('DOMContentLoaded', () => {
   form.addEventListener('submit', function (e) {
     e.preventDefault();
 
-    // MOSTRAR ESTADO Y DESACTIVAR BOTÓN
     submitBtn.disabled = true;
     const originalText = submitBtn.textContent;
     submitBtn.textContent = "Enviando...";
@@ -55,11 +53,9 @@ document.addEventListener('DOMContentLoaded', () => {
         responseEl.classList.add('error');
       })
       .finally(() => {
-        // REACTIVAR Y RESTAURAR TEXTO
         submitBtn.disabled = false;
         submitBtn.textContent = originalText || 'Enviar';
 
-        // AUTO-HIDE DEL MENSAJE
         setTimeout(() => {
           responseEl.classList.remove('visible', 'success', 'error');
           responseEl.textContent = '';

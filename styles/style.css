@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat:wght@400;600;700&display=swap');
 
-/* VARIABLES GLOBALES */
 :root {
     --color-primario: #000000;
     --color-secundario: #F6F6F6;
@@ -14,7 +13,6 @@
     --gap-general: 2.5rem;
 }
 
-/* RESET */
 * {
     padding: 0;
     margin: 0;
@@ -28,7 +26,6 @@ body {
     line-height: 1.6;
 }
 
-/* HEADER */
 .header {
     position: sticky;
     top: 0;
@@ -53,7 +50,6 @@ body {
     text-decoration: underline;
 }
 
-/* BOTÓN MENÚ TOGGLE */
 .menu-toggle {
     display: none;
     background: none;
@@ -63,7 +59,6 @@ body {
     cursor: pointer;
 }
 
-/* TITULO (solo en index) */
 .titulo {
     font-family: var(--fuente-krona);
     font-size: 2.25rem;
@@ -75,7 +70,6 @@ body {
     color: var(--color-terciario);
 }
 
-/* PRESENTACIÓN */
 .presentacion {
     padding: 2% 15% 5% 15%;
     display: flex;
@@ -179,7 +173,6 @@ body {
     transform: translateY(2px);
 }
 
-/* IMÁGENES */
 .index__presentacion__imagen {
     width: 50%;
     max-width: 100%;
@@ -195,7 +188,6 @@ body {
     margin: 1rem 0;
 }
 
-/* FOOTER */
 .footer {
     background-color: var(--color-terciario);
     color: var(--color-primario);
@@ -204,7 +196,6 @@ body {
     text-align: center;
 }
 
-/* FORMULARIO DE CONTACTO */
 .presentacion__contenido__form {
     display: flex;
     flex-direction: column;
@@ -237,13 +228,11 @@ body {
     resize: none;
 }
 
-/* PLACEHOLDER SUTIL */
 .presentacion__contenido__form input::placeholder,
 .presentacion__contenido__form textarea::placeholder {
     color: rgba(246, 246, 246, 0.6);
 }
 
-/* FOCUS */
 .presentacion__contenido__form input:focus,
 .presentacion__contenido__form textarea:focus,
 .presentacion__contenido__form input:hover,
@@ -253,7 +242,6 @@ body {
     box-shadow: 0 0 0 4px rgba(34, 212, 253, 0.15);
 }
 
-/* BOTÓN ENVIAR */
 .presentacion__contenido__form button {
     margin-top: 1rem;
     padding: 1rem;
@@ -283,15 +271,14 @@ body {
   color: #666;
   cursor: not-allowed;
   opacity: 0.7;
-  transform: none; /* EVITA EFECTO ACTIVE */
+  transform: none;
 }
 
 .presentacion__contenido__form button:disabled:hover {
-  background: #999; /* NO CAMBIA EN HOVER */
+  background: #999;
   color: #666;
 }
 
-/* MENSAJE DE ESTADO DEL ENVÍO DEL FORMULARIO*/
 #formResponse {
   font-size: 1rem;
   font-weight: 600;
@@ -313,7 +300,6 @@ body {
   color: #ff6b6b;
 }
 
-/* RESPONSIVIDAD */
 @media (max-width: 1200px) {
     .presentacion {
         flex-direction: column-reverse;
@@ -390,7 +376,6 @@ body {
 
     .presentacion__contenido__form button {
         width: 100%;
-        /* BOTÓN OCUPA ANCHO COMPLETO EN TABLET Y SMARTHPHONES */
         text-align: center;
     }
 }
